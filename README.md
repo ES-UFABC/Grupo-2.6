@@ -15,4 +15,4 @@ O SMA Handshake é um software com a missão de possibilitar uma interação mai
 1. Vinicius Henrique Espeçoto
 1. Giovanni Almeida de Sousa
 1. Fernando Schroder Rodirgues
-
+1. Oluwasheun dos Santos Calonge
