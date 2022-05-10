@@ -69,6 +69,13 @@ class Navbar extends Component {
     }
   };
 
+  handleLogout = () => {
+    console.log("handle logout");
+    localStorage.removeItem("email");
+    localStorage.removeItem("id");
+    this.setState({ isRegister: false, logout: true });
+  };
+
   loginRedirect = (response) => {
     if (response.status === 200) {
       const { login } = this.state;
@@ -138,10 +145,16 @@ class Navbar extends Component {
     const { login } = this.state;
     const { nome, email, id } = this.props;
 
+    if (this.state.logout) {
+      console.log("deslogando...");
+      window.location.href = "/";
+    }
+
     if (this.redirect && window.location.href !== "/produtor") {
       this.redirect = false;
       return <Navigate to={this.state.url} />;
     }
+
     return (
       <>
         <header>
@@ -183,6 +196,7 @@ class Navbar extends Component {
           {this.props.auth && (
             <div>
               <p>{email}</p>
+              <Button text="Logout" onClick={this.handleLogout}></Button>
             </div>
           )}
         </header>

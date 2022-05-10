@@ -79,7 +79,7 @@ class LineChart extends React.Component {
           curve: "straight",
         },
         title: {
-          text: "Product Trends by Month",
+          text: "Receita Mensal - Último ano",
           align: "left",
         },
         grid: {
