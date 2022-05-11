@@ -147,7 +147,7 @@ export default class Cadastro extends Component {
                                 </div>
                             </div>
                             <div className='button-container'>
-                                <Button text="Cadastrar-se" disabled={this.state.disabledCreate}/>
+                                <Button text="Cadastrar-se" type="submit" disabled={this.state.disabledCreate}/>
                                 {this.state.showMessage && <span className="text-error">Senha não confere</span>}
                             </div>
                         </div>
