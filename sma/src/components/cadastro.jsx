@@ -3,6 +3,7 @@ import { setCadastro } from '../middleware/servicesCadastro';
 import '../components/cadastro.css';
 import Button from './button';
 import Navbar from './navbar';
+import { toast } from 'react-toastify';
 export default class Cadastro extends Component {
     constructor() {
         super();
@@ -44,10 +45,23 @@ export default class Cadastro extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const { cadastro } = this.state
-
-        console.log(cadastro)
-        setCadastro(cadastro)
-
+        
+        setCadastro(cadastro, (status) => {
+            if(status === 200) {
+                toast.success ('Cadastro realizado com sucesso, iremos te direcionar para o login!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    });
+                    setTimeout(() => {
+                        window.location.href="/";
+                    }, 3000);
+            } else {
+                console.log("deu ruim");
+            }
+        })
     }
 
     handleStateDropdown = (e) => {
