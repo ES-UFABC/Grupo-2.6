@@ -12,9 +12,13 @@ import Consumidor from "./components/consumidor";
 import Menu from "./components/menu";
 import Dashboard from "./components/dashboard";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class App extends Component {
   render() {
     return (
+      <div>
+      <ToastContainer />
       <BrowserRouter basename="/">
         {/* <Menu/> */}
         <Routes>
@@ -26,6 +30,7 @@ class App extends Component {
           {/* <Route exact path='/compras' element={<Compras/>} /> */}
         </Routes>
       </BrowserRouter>
+      </div>
     );
   }
 }
