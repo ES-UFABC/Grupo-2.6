@@ -146,10 +146,10 @@ class Consumidor extends Component {
       console.log("====== oldata =====", e.oldData);
       //   console.log("====== getUser ====", this.navbar.current.getUser());
       var ordemDto = {
-        quantidade: qtdeCompra,
+        quantidade: +qtdeCompra,
         data_requisitada: new Date(),
-        comprador: this.props.id,
-        oferta: e.oldData.id,
+        comprador: +this.props.id,
+        oferta: +e.oldData.id,
       };
       console.log("===== ordemDTO =====", ordemDto);
       setOrdem(ordemDto);
@@ -235,7 +235,12 @@ class Consumidor extends Component {
                 useIcons={true}
                 visible={false}
               >
-                <Popup title="Compra" showTitle={true} width={700} height={300} />
+                <Popup
+                  title="Compra"
+                  showTitle={true}
+                  width={700}
+                  height={300}
+                />
               </Editing>
 
               {/* <Form>

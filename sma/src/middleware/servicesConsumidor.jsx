@@ -4,6 +4,7 @@ import http from "./httpService";
 let backPath = "http://localhost:8000/produtos";
 // let backPath = "https://sma-ufabc202201-backend.herokuapp.com/produtos"
 export async function setOrdem(ordem) {
+  console.log("=> ORDEM", ordem);
   return await http.post(backPath + "/ordem", ordem);
 }
 
