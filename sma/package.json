@@ -1,7 +1,7 @@
 {
   "name": "engsoft-ufabc",
   "version": "0.1.0",
-  "homepage": "SMA-Handshake-Eng-Software-2022.1-/",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",

@@ -133,7 +133,7 @@ class Consumidor extends Component {
     }
   };
 
-  handleRowPrepared = (e) => {
+  handleRowPrepared = async (e) => {
     console.log(e);
     const qtdeCompra = e.newData.comprar;
     const qtdeAtual = e.oldData.quantidade;
@@ -152,7 +152,8 @@ class Consumidor extends Component {
         oferta: +e.oldData.id,
       };
       console.log("===== ordemDTO =====", ordemDto);
-      setOrdem(ordemDto);
+      await setOrdem(ordemDto);
+      await this.getOfertas(this.state.busca_dados.commodity);
     }
   };
   refreshDataGrid() {

@@ -17,6 +17,7 @@ import {
 } from "../middleware/servicesProduto";
 import Navbar from "./navbar";
 import "./produtor.css";
+import Button from "./button";
 
 const data = [
   {
@@ -40,6 +41,10 @@ class Produtor extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit");
+  };
+
+  dashboardRedirect = () => {
+    window.location.href = "/dashboard";
   };
 
   onInsertHandler = async (ev) => {
@@ -79,6 +84,11 @@ class Produtor extends Component {
         <Navbar />
         <h1 className="producer-title">Perfil do Produtor</h1>
         <div className="producer-search-container">
+          <Button
+            text="Dashboard"
+            classType="dark"
+            onClick={this.dashboardRedirect}
+          />
           <DataGrid
             dataSource={this.state.ofertas}
             onRowInserting={this.onInsertHandler}
